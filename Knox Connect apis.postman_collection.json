@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "8f0fc32d-848b-4503-aab8-a35da00577aa",
+		"name": "Knox Connect apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14828437"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/knox_connect/sign-up",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Njc4NzM5LCJpYXQiOjE3MjU4MTQ3MzksImp0aSI6ImVkZDQ1ZDRlYjY0YjQ3YWFhNzczYjU0NWI5NDMwMjUyIiwidXNlcl9pZCI6M30.TBnmxx5R20mKpMjb4d3mt8P3ZBDfks1JaPX6my4H7nI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"newUser@xy.com\",\r\n    \"password\": \"test12345\",\r\n    \"confirm_password\": \"test12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/knox_connect/sign-up",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"knox_connect",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/token/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"try@xy.com\",\r\n    \"password\": \"test12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				},
+				"description": "Signin with email and password. And access and refresh jwt token with return."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/knox_connect/search-users/?q=try@xy.com",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Njc4NzM5LCJpYXQiOjE3MjU4MTQ3MzksImp0aSI6ImVkZDQ1ZDRlYjY0YjQ3YWFhNzczYjU0NWI5NDMwMjUyIiwidXNlcl9pZCI6M30.TBnmxx5R20mKpMjb4d3mt8P3ZBDfks1JaPX6my4H7nI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/knox_connect/search-users/?q=try@xy.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"knox_connect",
+						"search-users",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "try@xy.com"
+						}
+					]
+				},
+				"description": "Provide the value of query param 'q' as 'search-users//?q=try@xy.com'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/knox_connect/friends-list/Accepted",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Njc4NzM5LCJpYXQiOjE3MjU4MTQ3MzksImp0aSI6ImVkZDQ1ZDRlYjY0YjQ3YWFhNzczYjU0NWI5NDMwMjUyIiwidXNlcl9pZCI6M30.TBnmxx5R20mKpMjb4d3mt8P3ZBDfks1JaPX6my4H7nI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/knox_connect/friends-list/Accepted",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"knox_connect",
+						"friends-list",
+						"Accepted"
+					]
+				},
+				"description": "Get friends who accepted friend request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/knox_connect/friends-list/Pending",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Njc4NzM5LCJpYXQiOjE3MjU4MTQ3MzksImp0aSI6ImVkZDQ1ZDRlYjY0YjQ3YWFhNzczYjU0NWI5NDMwMjUyIiwidXNlcl9pZCI6M30.TBnmxx5R20mKpMjb4d3mt8P3ZBDfks1JaPX6my4H7nI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/knox_connect/friends-list/Pending",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"knox_connect",
+						"friends-list",
+						"Pending"
+					]
+				},
+				"description": "get friends request list with pending status (not yet accepted)"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/knox_connect/send-friend-request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Njc4NzM5LCJpYXQiOjE3MjU4MTQ3MzksImp0aSI6ImVkZDQ1ZDRlYjY0YjQ3YWFhNzczYjU0NWI5NDMwMjUyIiwidXNlcl9pZCI6M30.TBnmxx5R20mKpMjb4d3mt8P3ZBDfks1JaPX6my4H7nI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipient_id\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/knox_connect/send-friend-request",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"knox_connect",
+						"send-friend-request"
+					]
+				},
+				"description": "Send request to other User"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/knox_connect/respond-on-request/1b31a8aa-e91a-4fa6-8fd4-1b98511245b1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzI2Njg0OTY1LCJpYXQiOjE3MjU4MjA5NjUsImp0aSI6IjdlNjI4YmFhZDIyOTQwMTNiNTRjMjY2YTcyMDA1Y2FkIiwidXNlcl9pZCI6NH0.XZNcMneg5KvcE5H4SJrYRNq-EjO5eOhR8UW4C7Oy14Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"Accepted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/knox_connect/respond-on-request/1b31a8aa-e91a-4fa6-8fd4-1b98511245b1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"knox_connect",
+						"respond-on-request",
+						"1b31a8aa-e91a-4fa6-8fd4-1b98511245b1"
+					]
+				},
+				"description": "Accept or Reject Friend request, can only be done by request recipient."
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/knox_connect/add-users-for-testing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"test\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/knox_connect/add-users-for-testing",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"knox_connect",
+						"add-users-for-testing"
+					]
+				},
+				"description": "create four users for testing as mention example in docs - Amarendra, Amar, aman, Abhirama"
+			},
+			"response": []
+		}
+	]
+}
