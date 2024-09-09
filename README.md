@@ -17,13 +17,13 @@ Run container:
 docker-compose up
 ```
 
-Create superuser for django:
+##Create superuser for django:
 
 ```sh
 docker-compose exec web python manage.py createsuperuser
+```
 
-
-## List of api end_points
+##List of api end_points
 1. Signing Up (`http://127.0.0.1:8000/api/knox_connect/sign-up`)
 
 2. Login (`http://127.0.0.1:8000/api/token/`)
